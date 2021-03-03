@@ -1,10 +1,14 @@
 import React from "react";
 
-const NewsStory = ({title}) => {
+const NewsStory = ({children, loaded}) => {
+
+    // if (!loaded){
+    //     return <p>Loading...</p>
+    //   }
 
     return(
         <>
-            <h1>{title}</h1>
+            <h1>{children}</h1>
         </>
     )
 }

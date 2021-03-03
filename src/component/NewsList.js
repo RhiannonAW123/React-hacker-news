@@ -1,29 +1,27 @@
 import React from 'react';
-// import NewsStory from './NewsStory';
+import NewsStory from './NewsStory';
 
-const NewsList = ({stories}) => {
-
-    // const storyIDArray = [26326639, 26323852, 26326599, 26326795, 26324347]
-    
-    
-
+const NewsList = ({stories, loaded}) => {
+    if (!loaded){
+        return <p>Loading...</p>
+      }
 
 
-    // const storyNodes = stories.map(story => {
-    //     return(
-    //         <>
-            /* <NewsStory getStories={fetch("https://hacker-news.firebaseio.com/v0/item/{storyIDArray}.json")} />
-                <NewsStory title={story.title} />
-            </> */
-    //     )
-    // })
-
-        return (
+    const storyNodes = stories.map((story)=> {
+        
+        return(
             <>
-                <h2>Story List</h2>
-                {/* <p>{storyNodes}</p> */}
+                <NewsStory key={story.id} url={story.url}>{story.title}</NewsStory>
             </>
-        )
+         )
+     });
+
+    return (
+        <>
+            <h2>Story List</h2>
+            {storyNodes}
+        </>
+    )
 }
 
 export default NewsList;
