@@ -1,15 +1,22 @@
 import React from "react";
 
-const NewsStory = ({children, loaded}) => {
+const NewsStory = ({url, children, loaded}) => {
 
     // if (!loaded){
     //     return <p>Loading...</p>
     //   }
 
     return(
+        <div id='url'>
         <>
-            <h1>{children}</h1>
+            <ul>
+                <li>
+                    <a href={url}>{children}</a>
+                    
+                </li>
+            </ul>
         </>
+        </div>
     )
 }
 

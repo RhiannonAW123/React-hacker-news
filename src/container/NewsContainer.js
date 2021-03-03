@@ -8,6 +8,8 @@ const NewsContainer = () => {
 
 
 
+
+
     useEffect(() => {
         getStories();
     }, [])
@@ -31,13 +33,17 @@ const NewsContainer = () => {
 
 
     return(
+       
         <>
-        <p>News Container Here</p>
+        {/* <p>News Container Here</p> */}
+
+
             <NewsList
                 stories={stories}
                 loaded={loaded}
             />       
         </>
+        
     )
 }
 
