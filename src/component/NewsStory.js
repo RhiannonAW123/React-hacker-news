@@ -1,10 +1,10 @@
 import React from "react";
 
-const NewsStory = () => {
+const NewsStory = ({title}) => {
 
     return(
         <>
-            <h1>This is NewsStory</h1>
+            <h1>{title}</h1>
         </>
     )
 }
